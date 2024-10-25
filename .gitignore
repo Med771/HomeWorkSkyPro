@@ -2,6 +2,7 @@
 
 *.iml
 .idea
+src/test.java
 
 out/
 !**/src/main/**/out/
