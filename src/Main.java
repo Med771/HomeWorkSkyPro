@@ -7,6 +7,7 @@ public class Main {
 
         // task 2
         task2();
+        System.out.println();
 
         // task 3
         task3();
@@ -26,149 +27,106 @@ public class Main {
 
         // task 7
         task7();
-        System.out.println();
-
-        // task 8
-        task8();
     }
 
     public static void task1() {
-        byte module = 1;
-        short price = 30000;
-        int id = 1358678678;
-        long stars = 1222333444555666777L;
-        float percent = 0.125F;
-        double pi = 3.14159265358979323846D;
+        // We record other age for if
+        byte age = 17;
 
-        System.out.println("Значение переменной module с типом byte равно " + module);
-        System.out.println("Значение переменной price с типом short равно " + price);
-        System.out.println("Значение переменной id с типом int равно " + id);
-        System.out.println("Значение переменной stars с типом long равно " + stars);
-        System.out.println("Значение переменной percent с типом float равно " + percent);
-        System.out.println("Значение переменной pi с типом double равно " + pi);
+        if (age >= 18) {
+            System.out.println("Если возраст человека больше или равен " + age + ", то он совершеннолетний");
+        }
+        else {
+            System.out.println("Если возраст человека больше или равен " + age + ", то он не достиг совершеннолетия, нужно немного подождать");
+        }
     }
 
     public static void task2() {
-        float num1 = 27.12F;
-        long num2 = 987_678_965_549L;
-        float num3 = 2.786F;
-        short num4 = 569;
-        short num5 = -159;
-        short num6 = 27897;
-        byte num7 = 67;
+        // We record other age for if
+        byte temperature = 4;
+
+        if (temperature <= 5) {
+            System.out.println("На улице " + temperature + " нужно надеть шапку");
+        }
+        else {
+            System.out.println("На улице " + temperature + " можно идти без шапки");
+        }
     }
 
     public static void task3() {
-        byte firstNumberOfStudents = 23;
-        byte secondNumberOfStudents = 27;
-        byte thirdNumberOfStudents = 30;
+        // We record other age for if
+        byte speed = 65;
 
-        byte totalStudents = (byte) (firstNumberOfStudents + secondNumberOfStudents + thirdNumberOfStudents);
-
-        short papers = 480;
-
-        byte papersPerStudent = (byte) (papers / totalStudents);
-
-        System.out.println("На каждого ученика рассчитано " + papersPerStudent + " листов бумаги.");
+        if (speed > 60) {
+            System.out.println("Если скорость " + speed + " придется заплатить штраф");
+        }
+        else {
+            System.out.println("Если скорость " + speed + " можно ездить спокойно");
+        }
     }
 
     public static void task4() {
-        // I record the power of the machine, reducing everything to a minute, for easy half-reading
-        byte machinePerformance = 16 / 2;
+        // We record other age for if
+        byte age = 17;
 
-        // power per 20 minutes
-        short firstPower = (short) (20 * machinePerformance);
-        System.out.println("За 20 минут машина произвела " + firstPower + " штук бутылок");
-
-        // power per day
-        short secondPower = (short) (1440 * machinePerformance);
-        System.out.println("За 24 часа машина произвела " + secondPower + " штук бутылок");
-
-        // power per 3 days
-        int thirdPower = 3 * 1440 * machinePerformance;
-        System.out.println("За 3 дня машина произвела " + thirdPower + " штук бутылок");
-
-        // power per month (30 days)
-        int fourthPower = 30 * 1440 * machinePerformance;
-        System.out.println("За 1 месяц машина произвела " + fourthPower + " штук бутылок");
+        if (age >= 2 && age <= 6) {
+            System.out.println("Если возраст человека равен " + age + ", то ему нужно ходить в детский сад.");
+        }
+        else if (age >= 7 && age <= 17) {
+            System.out.println("Если возраст человека равен " + age + ", то ему нужно ходить в школу.");
+        }
+        else if (age >= 18 && age <= 24) {
+            System.out.println("Если возраст человека равен " + age +  ", то ему нужно ходить в университет");
+        }
+        else if (age > 24) {
+            System.out.println("Если возраст человека равен " + age + ", то ему нужно ходить на работу");
+        }
     }
 
     public static void task5() {
-        byte amountOfWhitePaintPerClass = 2;
-        byte amountOfBrownPaintPerClass = 4;
+        // We record other age for if
+        byte age = 17;
 
-        byte amountOfPaintsPerClass = (byte) (amountOfBrownPaintPerClass + amountOfWhitePaintPerClass);
-
-        byte totalAmountOfPaint = 120;
-
-        byte amountClasses = (byte) (totalAmountOfPaint / amountOfPaintsPerClass);
-
-        byte amountOfWhitePaint = (byte) (amountClasses * amountOfWhitePaintPerClass);
-        byte amountOfBrownPaint = (byte) (amountClasses * amountOfBrownPaintPerClass);
-
-        System.out.println("В школе, где " + amountClasses + " классов, нужно " + amountOfWhitePaint + " банок белой краски и " + amountOfBrownPaint + " банок коричневой краски");
+        if (age < 5) {
+            System.out.println("Если возраст ребенка равен " + age + ", то ему нельзя кататься на аттракционе");
+        }
+        else if (age >= 5 && age < 14) {
+            System.out.println("Если возраст ребенка равен " + age + ", то ему можно кататься на аттракционе в сопровождении");
+        }
+        else {
+            System.out.println("Если возраст ребенка равен " + age + ", то ему можно кататься на аттракционе без сопровождения взрослого");
+        }
     }
 
     public static void task6() {
-        // Weight Ingredients
-        byte weightOfBanana = 80;
-        byte weightOfMilk = 105;
-        byte weightOfIceCream = 100;
-        byte weightOfEggs = 70;
+        // In solving the problem I decided to prioritise the seating places
+        byte TotalNumberOfSeatsInCarriage = 102;
+        byte NumberOfOccupiedSeatsInCarriage = 37;
+        byte NumberOfSeatsInCarriage = 62;
 
-        byte amountOfBanana = 5;
-        byte amountOfMilk = 2;
-        byte amountOfIceCream = 2;
-        byte amountOfEggs = 4;
 
-        short totalWeightBanana = (short) (weightOfBanana * amountOfBanana);
-        short totalWeightMilk = (short) (weightOfMilk * amountOfMilk);
-        short totalWeightOfIceCream = (short) (weightOfIceCream * amountOfIceCream);
-        short totalWeightEggs = (short) (weightOfEggs * amountOfEggs);
-
-        float totalWeightBreakfastInGrams = (short) (totalWeightBanana + totalWeightMilk + totalWeightOfIceCream + totalWeightEggs);
-        float totalWeightBreakfastInKilograms = totalWeightBreakfastInGrams / 1000;
-
-        System.out.println((short) totalWeightBreakfastInGrams + " грамм");
-        System.out.println(totalWeightBreakfastInKilograms + " килограмм");
+        if (NumberOfOccupiedSeatsInCarriage < NumberOfSeatsInCarriage) {
+            System.out.println("Свободны сидячие места");
+        }
+        else if (NumberOfOccupiedSeatsInCarriage < TotalNumberOfSeatsInCarriage) {
+            System.out.println("Свободны стоячие места");
+        }
+        else{
+            System.out.println("Не осталось мест");
+        }
     }
 
     public static void task7() {
-        short minimumLossInGrams = 250;
-        short maximumLossIGrams = 500;
+        int one = 5, two = 3, three = 4;
 
-        byte weightToLoseInKilograms = 7;
-        short weightToLoseInGrams = (short) (weightToLoseInKilograms * 1000);
-
-        byte minimumDaysToLoseWeight = (byte) (weightToLoseInGrams / minimumLossInGrams);
-        byte maximumDaysToLoseWeight = (byte) (weightToLoseInGrams / maximumLossIGrams);
-
-        byte mediumDaysToLoseWeight = (byte) ((maximumDaysToLoseWeight + minimumDaysToLoseWeight) / 2);
-
-        System.out.println("Минимально для похудения нужно " + minimumDaysToLoseWeight + " дней");
-        System.out.println("Максисально для похудения нужно " + maximumDaysToLoseWeight + " дней");
-        System.out.println("В среднем для похудения нужно " + mediumDaysToLoseWeight + " дней");
-    }
-
-    public static void task8() {
-        float upliftFactor = 1.1F;
-
-        int currentSalaryForMasha = 67760;
-        int currentSalaryForDenis = 83690;
-        int currentSalaryForKristina = 76230;
-
-        int newSalaryForMasha = (int) (upliftFactor * currentSalaryForMasha);
-        int newSalaryForDenis = (int) (upliftFactor * currentSalaryForDenis);
-        int newSalaryForKristina = (int) (upliftFactor * currentSalaryForKristina);
-
-        short differenceSalaryForMasha = (short) (newSalaryForMasha - currentSalaryForMasha);
-        short differenceSalaryForDenis = (short) (newSalaryForDenis - currentSalaryForDenis);
-        short differenceSalaryForKristina = (short) (newSalaryForKristina - currentSalaryForKristina);
-
-        System.out.println("Маша теперь получает " + newSalaryForMasha + " рублей. Годовой доход вырос на " + differenceSalaryForMasha + " рублей");
-        System.out.println("Денис теперь получает " + newSalaryForDenis + " рублей. Годовой доход вырос на " + differenceSalaryForDenis + " рублей");
-        System.out.println("Кристина теперь получает " + newSalaryForKristina + " рублей. Годовой доход вырос на " + differenceSalaryForKristina + " рублей");
-
-
+        if (one >= two && one >= three) {
+            System.out.println(one);
+        }
+        else if (two >= three && two >= one) {
+            System.out.println(two);
+        }
+        else {
+            System.out.println(three);
+        }
     }
 }
