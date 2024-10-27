@@ -95,13 +95,12 @@ public class Main {
     }
 
     public static void task9() {
-        int account = 40000;
-        int cumulativePercentage = account / 100;
+        float account = 40000;
 
         for (int i = 1; i <= 12; i++) {
-            account += cumulativePercentage;
-
             System.out.println("Месяц " + i + ", сумма накоплений равна " + account + " рублей");
+
+            account += account / 100;
         }
     }
 
