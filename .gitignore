@@ -2,7 +2,11 @@
 
 *.iml
 .idea
-src/test.java
+
+src/hw0.java
+src/hw1.java
+src/hw2.java
+src/hw3.java
 
 out/
 !**/src/main/**/out/

@@ -8,7 +8,6 @@ public class Main {
         // task 2
         task2();
         System.out.println();
-
         // task 3
         task3();
         System.out.println();
@@ -33,80 +32,110 @@ public class Main {
         task8();
         System.out.println();
 
-        // task 9
-        task9();
-        System.out.println();
-
-        // task 10
-        task10();
-        System.out.println();
     }
 
     public static void task1() {
-        for (byte i = 1; i <= 10; i++) {
-            System.out.println(i);
+        short months = 0;
+        int account = 0;
+
+        while (account < 2459000) {
+            account += 15000;
+            months++;
+
+            System.out.println("Месяц " + months + ", сумма накоплений равна " + account + " рублей");
         }
     }
 
     public static void task2() {
-        for (byte i = 10; i >= 1; i--) {
-            System.out.println(i);
+        byte i = 1;
+
+        while (i <= 10) {
+            System.out.print(i + " ");
+
+            i++;
         }
+
+        System.out.println();
+
+        for (i = 10; i >= 1; i--){
+            System.out.print(i + " ");
+        }
+
+        System.out.println();
     }
 
     public static void task3() {
-        for (byte i = 0; i <= 17; i += 2) {
-            System.out.println(i);
+        int population = 12_000_000;
+
+        for (int i = 1; i < 11; i++) {
+            population += population / 1000 * 9;
+            System.out.println("Год " + i + ", численность населения составляет " + population);
         }
     }
 
     public static void task4() {
-        for (byte i = 10; i >= -10; i--) {
-            System.out.println(i);
+        int account = 15000;
+        short months = 1;
+
+        while (account < 12_000_000) {
+            System.out.println("Месяц " + months + ", сумма накоплений равна " + account + " рублей");
+
+            months++;
+            account += (int) (account * 0.07);
         }
+
+        System.out.println("Месяц " + months + ", сумма накоплений равна " + account + " рублей");
     }
 
     public static void task5() {
-        for (short i = 1904; i <= 2096; i++) {
-            if ((i % 4 == 0 && i % 100 != 0) || i % 400 == 0) {
-                System.out.println(i);
+        int account = 15000;
+        short months = 1;
+
+        while (account < 12_000_000) {
+            if (months % 6 == 0) {
+                System.out.println("Месяц " + months + ", сумма накоплений равна " + account + " рублей");
             }
+
+            months++;
+            account += (int) (account * 0.07);
         }
+
+        System.out.println("Месяц " + months + ", сумма накоплений равна " + account + " рублей");
     }
 
     public static void task6() {
-        for (byte i = 7; i < 99; i += 7) {
-            System.out.println(i);
+        int account = 15000;
+        short months = 1;
+
+        for (int i = 0; i < 55; i++) {
+            if (i % 6 == 0) {
+                System.out.println("Месяц " + months + ", сумма накоплений равна " + account + " рублей");
+            }
+
+            months++;
+            account += (int) (account * 0.07);
         }
+
+        System.out.println("Месяц " + months + ", сумма накоплений равна " + account + " рублей");
     }
 
     public static void task7() {
-        short i = 1;
+        int fridayNumber = 4;
 
-        for (; i < 513; i *= 2) {
-            System.out.println(i);
+        while (fridayNumber <= 31) {
+            System.out.println("Сегодня пятница, " + fridayNumber + "-е число. Необходимо подготовить отчет");
+
+            fridayNumber += 7;
         }
     }
 
     public static void task8() {
-        for (int i = 1; i <= 12; i++) {
-            System.out.println("Месяц " + i + ", сумма накоплений равна " + (i * 29000) + " рублей");
-        }
-    }
+        int currentYear = 2024;
 
-    public static void task9() {
-        float account = 40000;
-
-        for (int i = 1; i <= 12; i++) {
-            System.out.println("Месяц " + i + ", сумма накоплений равна " + account + " рублей");
-
-            account += account / 100;
-        }
-    }
-
-    public static void task10() {
-        for (int i = 1; i <= 10; i++) {
-            System.out.println("2*" + i + "=" + (2 * i));
+        for (int i = currentYear - 200; i < currentYear + 101; i++) {
+            if (i % 79 == 0) {
+                System.out.println(i);
+            }
         }
     }
 }
