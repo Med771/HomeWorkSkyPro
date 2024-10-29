@@ -1,141 +1,84 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        // Output an empty string to separate tasks
         // task 1
-        task1();
-        System.out.println();
+        byte[] arr1 = new byte[3];
+
+        for (int i = 0; i < arr1.length; i++) {
+            arr1[i] = (byte) (i + 1);
+        }
+
+        float[] arr2 = new float[3];
+
+        arr2[0] = 1.57F;
+        arr2[1] = 7.654F;
+        arr2[2] = 9.986F;
+
+        int[] arr3 = {1, 1, 2, 3, 5, 8};
 
         // task 2
-        task2();
-        System.out.println();
+        for (int i = 0; i < arr1.length; i++) {
+            if (i == arr1.length - 1) {
+                System.out.println(arr1[i]);
+                break;
+            }
+            System.out.print(arr1[i] + ", ");
+        }
+
+        for (int i = 0; i < arr2.length; i++) {
+            if (i == arr2.length - 1) {
+                System.out.println(arr2[i]);
+                break;
+            }
+
+            System.out.print(arr2[i] + ", ");
+        }
+
+        for (int i = 0; i < arr3.length; i++) {
+            if (i == arr3.length - 1) {
+                System.out.println(arr3[i]);
+                break;
+            }
+
+            System.out.print(arr3[i] + ", ");
+        }
+
         // task 3
-        task3();
-        System.out.println();
+        for (int i = arr1.length - 1; i >= 0; i--) {
+            if (i == 0) {
+                System.out.println(arr1[i]);
+                break;
+            }
+
+            System.out.print(arr1[i] + ", ");
+        }
+
+        for (int i = arr2.length - 1; i >= 0; i--) {
+            if (i == 0) {
+                System.out.println(arr2[i]);
+                break;
+            }
+
+            System.out.print(arr2[i] + ", ");
+        }
+
+        for (int i = arr3.length - 1; i >= 0; i--) {
+            if (i == 0) {
+                System.out.println(arr3[i]);
+                break;
+            }
+
+            System.out.print(arr3[i] + ", ");
+        }
 
         // task 4
-        task4();
-        System.out.println();
-
-        // task 5
-        task5();
-        System.out.println();
-
-        // task 6
-        task6();
-        System.out.println();
-
-        // task 7
-        task7();
-        System.out.println();
-
-        // task 8
-        task8();
-        System.out.println();
-
-    }
-
-    public static void task1() {
-        short months = 0;
-        int account = 0;
-
-        while (account < 2459000) {
-            account += 15000;
-            months++;
-
-            System.out.println("Месяц " + months + ", сумма накоплений равна " + account + " рублей");
-        }
-    }
-
-    public static void task2() {
-        byte i = 1;
-
-        while (i <= 10) {
-            System.out.print(i + " ");
-
-            i++;
-        }
-
-        System.out.println();
-
-        for (i = 10; i >= 1; i--){
-            System.out.print(i + " ");
-        }
-
-        System.out.println();
-    }
-
-    public static void task3() {
-        int population = 12_000_000;
-
-        for (int i = 1; i < 11; i++) {
-            population += population / 1000 * 9;
-            System.out.println("Год " + i + ", численность населения составляет " + population);
-        }
-    }
-
-    public static void task4() {
-        int account = 15000;
-        short months = 1;
-
-        while (account < 12_000_000) {
-            System.out.println("Месяц " + months + ", сумма накоплений равна " + account + " рублей");
-
-            months++;
-            account += (int) (account * 0.07);
-        }
-
-        System.out.println("Месяц " + months + ", сумма накоплений равна " + account + " рублей");
-    }
-
-    public static void task5() {
-        int account = 15000;
-        short months = 1;
-
-        while (account < 12_000_000) {
-            if (months % 6 == 0) {
-                System.out.println("Месяц " + months + ", сумма накоплений равна " + account + " рублей");
-            }
-
-            months++;
-            account += (int) (account * 0.07);
-        }
-
-        System.out.println("Месяц " + months + ", сумма накоплений равна " + account + " рублей");
-    }
-
-    public static void task6() {
-        int account = 15000;
-        short months = 1;
-
-        for (int i = 0; i < 55; i++) {
-            if (i % 6 == 0) {
-                System.out.println("Месяц " + months + ", сумма накоплений равна " + account + " рублей");
-            }
-
-            months++;
-            account += (int) (account * 0.07);
-        }
-
-        System.out.println("Месяц " + months + ", сумма накоплений равна " + account + " рублей");
-    }
-
-    public static void task7() {
-        int fridayNumber = 4;
-
-        while (fridayNumber <= 31) {
-            System.out.println("Сегодня пятница, " + fridayNumber + "-е число. Необходимо подготовить отчет");
-
-            fridayNumber += 7;
-        }
-    }
-
-    public static void task8() {
-        int currentYear = 2024;
-
-        for (int i = currentYear - 200; i < currentYear + 101; i++) {
-            if (i % 79 == 0) {
-                System.out.println(i);
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i] % 2 != 0) {
+                arr1[i] += 1;
             }
         }
+
+        System.out.println(Arrays.toString(arr1));
     }
 }
