@@ -1,84 +1,44 @@
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
-        // task 1
-        byte[] arr1 = new byte[3];
+        // I used one array for all tasks
+        int[] expenditure = {502323, 83923, 98298, 21927, 28398};
 
-        for (int i = 0; i < arr1.length; i++) {
-            arr1[i] = (byte) (i + 1);
+        // task 1
+        int totalExpenditure = 0;
+
+        for (int waste : expenditure) {
+            totalExpenditure += waste;
         }
 
-        float[] arr2 = new float[3];
-
-        arr2[0] = 1.57F;
-        arr2[1] = 7.654F;
-        arr2[2] = 9.986F;
-
-        int[] arr3 = {1, 1, 2, 3, 5, 8};
+        System.out.println("Сумма трат за месяц составила " + totalExpenditure + " рублей");
 
         // task 2
-        for (int i = 0; i < arr1.length; i++) {
-            if (i == arr1.length - 1) {
-                System.out.println(arr1[i]);
-                break;
+        int minExpenditure = expenditure[0];
+        int maxExpenditure = expenditure[0];
+
+        for (int i = 1; i < expenditure.length; i++) {
+            if (expenditure[i] < minExpenditure) {
+                minExpenditure = expenditure[i];
             }
-            System.out.print(arr1[i] + ", ");
+            if (expenditure[i] > maxExpenditure) {
+                maxExpenditure = expenditure[i];
+            }
         }
 
-        for (int i = 0; i < arr2.length; i++) {
-            if (i == arr2.length - 1) {
-                System.out.println(arr2[i]);
-                break;
-            }
-
-            System.out.print(arr2[i] + ", ");
-        }
-
-        for (int i = 0; i < arr3.length; i++) {
-            if (i == arr3.length - 1) {
-                System.out.println(arr3[i]);
-                break;
-            }
-
-            System.out.print(arr3[i] + ", ");
-        }
+        System.out.println("Минимальная сумма трат за неделю составила " + minExpenditure + " рублей.");
+        System.out.println("Максимальная сумма трат за неделю составила " + maxExpenditure + " рублей");
 
         // task 3
-        for (int i = arr1.length - 1; i >= 0; i--) {
-            if (i == 0) {
-                System.out.println(arr1[i]);
-                break;
-            }
+        // We already have totalExpenditure, so we will perform the calculations at once
+        float averageSpend = (float) totalExpenditure / expenditure.length;
 
-            System.out.print(arr1[i] + ", ");
-        }
-
-        for (int i = arr2.length - 1; i >= 0; i--) {
-            if (i == 0) {
-                System.out.println(arr2[i]);
-                break;
-            }
-
-            System.out.print(arr2[i] + ", ");
-        }
-
-        for (int i = arr3.length - 1; i >= 0; i--) {
-            if (i == 0) {
-                System.out.println(arr3[i]);
-                break;
-            }
-
-            System.out.print(arr3[i] + ", ");
-        }
+        System.out.println("Средняя сумма трат за месяц составила " + averageSpend + " рублей");
 
         // task 4
-        for (int i = 0; i < arr1.length; i++) {
-            if (arr1[i] % 2 != 0) {
-                arr1[i] += 1;
-            }
-        }
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
 
-        System.out.println(Arrays.toString(arr1));
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
+        }
     }
 }
