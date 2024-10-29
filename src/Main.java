@@ -1,12 +1,12 @@
 public class Main {
     public static void main(String[] args) {
         // I used one array for all tasks
-        int[] expenditure = {502323, 83923, 98298, 21928, 28398};
+        int[] expenditure = {502323, 83923, 98298, 21927, 28398};
 
         // task 1
         int totalExpenditure = 0;
 
-        for (int waste: expenditure) {
+        for (int waste : expenditure) {
             totalExpenditure += waste;
         }
 
@@ -30,12 +30,12 @@ public class Main {
 
         // task 3
         // We already have totalExpenditure, so we will perform the calculations at once
-        float averageSpend = (float) (totalExpenditure / expenditure.length);
+        float averageSpend = (float) totalExpenditure / expenditure.length;
 
         System.out.println("Средняя сумма трат за месяц составила " + averageSpend + " рублей");
 
         // task 4
-        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
 
         for (int i = reverseFullName.length - 1; i >= 0; i--) {
             System.out.print(reverseFullName[i]);
