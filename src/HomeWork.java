@@ -1,12 +1,10 @@
-import java.time.LocalDate;
-
 public class HomeWork {
     public static void main(String[] args) {
         // task 1
         isLeapYear(2024);
 
         // task 2
-        getUrlDownloadApp(1, 2023);
+        getUrlDownloadApp(1, 2023, 2015);
 
         // task 3
         int days = getDayByDistance(95);
@@ -23,10 +21,9 @@ public class HomeWork {
         System.out.println(year + " год не является високосным");
     }
 
-    public static void getUrlDownloadApp(int clientDeviceOS, int clientDeviceYear) {
-        int currentYear = LocalDate.now().getYear();
+    public static void getUrlDownloadApp(int clientDeviceOS, int clientDeviceYear, int updateYear) {
 
-        if (clientDeviceOS == 0 && currentYear == clientDeviceYear) {
+        if (clientDeviceOS == 0 && updateYear <= clientDeviceYear) {
             System.out.println("Установите версию приложения для iOS по ссылке");
             return;
         }
@@ -35,7 +32,7 @@ public class HomeWork {
             return;
         }
 
-        if (clientDeviceOS == 1 && currentYear == clientDeviceYear) {
+        if (clientDeviceOS == 1 && updateYear <= clientDeviceYear) {
             System.out.println("Установите версию приложения для Android по ссылке");
             return;
         }
