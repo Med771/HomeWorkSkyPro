@@ -27,14 +27,10 @@ public class Main {
             throw new WrongLoginException("Login is null or empty");
         }
 
-        int counter = 1;
+        String loginRegex = "^[a-zA-Z0-9_]{1,20}$";
 
-        for (char symbol : login.toCharArray()) {
-            if (counter <= 20 && (isLatinSymbol(symbol) || (symbol > 47 && symbol < 58) || symbol == 95)) {
-                counter++;
-            } else {
-                throw new WrongLoginException("Invalid login");
-            }
+        if (!login.matches(loginRegex)) {
+            throw new WrongLoginException("Invalid login");
         }
     }
 
@@ -43,22 +39,14 @@ public class Main {
             throw new WrongPasswordException("Password is null or empty");
         }
 
-        int counter = 1;
-
         if (!password.equals(confirmPassword)) {
             throw new WrongPasswordException("Passwords do not match");
         }
 
-        for (char symbol : password.toCharArray()) {
-            if (counter <= 20 && (isLatinSymbol(symbol) || (symbol > 47 && symbol < 58) || symbol == 95)) {
-                counter++;
-            } else {
-                throw new WrongPasswordException("Invalid password");
-            }
-        }
-    }
+        String passwordRegex = "^[a-zA-Z0-9_]{1,20}$";
 
-    public static boolean isLatinSymbol(char symbol) {
-        return (symbol > 96 && symbol < 123) || (symbol > 64 && symbol < 91);
+        if (!password.matches(passwordRegex)) {
+            throw new WrongPasswordException("Invalid password");
+        }
     }
 }
