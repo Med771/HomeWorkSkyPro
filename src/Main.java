@@ -1,22 +1,64 @@
 public class Main {
     public static void main(String[] args) {
-        // I will create: firstName, middleName, lastName, and after I create fullName.
-        // It will make it easier to do the 1st and 2nd task
-        String firstName = "Ivan";
-        String middleName = "Ivanovich";
-        String lastName = "Ivanov";
+        System.out.println("test1");
+        validateData("JHJHg_22", "ttt", "ttt");
 
-        String fullName = firstName + " " + middleName + " " + lastName;
+        System.out.println("test2");
+        validateData("JHJHg_2@", "ttt", "ttt");
 
-        // task 1
-        System.out.println("Ф. И. О. сотрудника — " + fullName);
+        System.out.println("test3");
+        validateData("JHJHg_22", "ttt", "tt");
 
-        //task 2
-        System.out.println("Данные Ф. И. О. сотрудника для заполнения отчета — " + fullName.toUpperCase());
+        System.out.println("test4");
+        validateData("JHJHg_22", "ttt3+", "ttt3+");
+    }
 
-        //task 3
-        fullName = "Иванов Семён Семёнович";
+    public static void validateData(String login, String password, String confirmPassword) {
+        try {
+            validateLogin(login);
+            validatePassword(password, confirmPassword);
+        } catch (WrongLoginException | WrongPasswordException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
 
-        System.out.println("Данные Ф. И. О. сотрудника — " + fullName.replaceAll("ё", "е"));
+    public static void validateLogin(String login) throws WrongLoginException {
+        if (login == null || login.isEmpty()) {
+            throw new WrongLoginException("Login is null or empty");
+        }
+
+        int counter = 1;
+
+        for (char symbol : login.toCharArray()) {
+            if (counter <= 20 && (isLatinSymbol(symbol) || (symbol > 47 && symbol < 58) || symbol == 95)) {
+                counter++;
+            } else {
+                throw new WrongLoginException("Invalid login");
+            }
+        }
+    }
+
+    public static void validatePassword(String password, String confirmPassword) throws WrongPasswordException {
+        if (password == null || password.isEmpty() || confirmPassword == null || confirmPassword.isEmpty()) {
+            throw new WrongPasswordException("Password is null or empty");
+        }
+
+        int counter = 1;
+
+        if (!password.equals(confirmPassword)) {
+            throw new WrongPasswordException("Passwords do not match");
+        }
+
+        for (char symbol : password.toCharArray()) {
+            if (counter <= 20 && (isLatinSymbol(symbol) || (symbol > 47 && symbol < 58) || symbol == 95)) {
+                counter++;
+            } else {
+                throw new WrongPasswordException("Invalid password");
+            }
+        }
+    }
+
+    public static boolean isLatinSymbol(char symbol) {
+        return (symbol > 96 && symbol < 123) || (symbol > 64 && symbol < 91);
     }
 }
